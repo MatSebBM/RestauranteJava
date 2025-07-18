@@ -1,18 +1,12 @@
-## Getting Started
+## Línea de comando para compilación
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+```powershell
+javac -encoding UTF-8 -d bin -cp ".;lib/*" @(Get-ChildItem -Recurse -Filter *.java -Path src | ForEach-Object { $_.FullName })
+```
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+## Linea de comando para Ejecucion 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```powershell
+java -cp "bin;lib/*" app.App
+```
